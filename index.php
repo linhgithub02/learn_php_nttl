@@ -1,20 +1,19 @@
 <?php
-echo "Hello!";
-//Ở đây ghi chú=)))
-// Bắt đầu phần biến
-$totalVolume = 30;
-echo "<br>"; // Xuống dòng 
-echo $totalVolume; //Quy tắc camelCase
-echo "<br>";
-//Đây là hàm
-function myTest(){
-    static $x =0;
-    echo $x;
-    $x ++;
+// Bài 15: //Bài 15: Viết chương trình PHP để đảo ngược một chuỗi.
+echo "Bài 15:";
+function reverseString ($string){
+    $reverse = strrev($string);
+    return $reverse;
 }
-myTest(); echo "<br>";
-myTest(); echo "<br>";
-myTest();
+$result = reverseString("Linh");
+echo " Chuỗi đảo ngược là: ". $result;
 echo "<br>";
-echo strpos("hello world", "world");
+//Bài 16: Viết chương trình PHP để tính số lượng phần tử trong một mảng
+echo "Bài 16: ";
+function countElenmentArray($array){
+    $count= count($array);
+    return $count;
+}
+$result = countElenmentArray(array('1','2'));
+echo " Số phần tử của mảng là: ". $result;
 ?>
