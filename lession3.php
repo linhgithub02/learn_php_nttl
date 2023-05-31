@@ -10,7 +10,7 @@ function checkNumber($n){
     }
 }
 $n =15;
-$result = checkNumber(15);
+$result = checkNumber($n);
 if($result == true){
     echo "$n Đây là số chẵn <br>";
 }
@@ -93,7 +93,7 @@ function multiplication($integer){
     return $multiplication;
 }
 $integer = 6;
-$result = multiplication(6);
+$result = multiplication($integer);
 echo "Giai thừa của số nguyên dương ". $integer ." là: ". $result ."<br>";
 //Bài 8: Viết chương trình PHP để tìm số nguyên tố trong một khoảng cho trước.
 echo "Bài 8: ";
