@@ -10,7 +10,7 @@ function checkNumber($n){
     }
 }
 $n =15;
-$result = checkNumber(15);
+$result = checkNumber($n);
 if($result == true){
     echo "$n,  đây là số chẵn <br>";
 }
