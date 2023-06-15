@@ -67,7 +67,7 @@ VALUES ('1001','BB01', '10'),
 ('1002','BB02', '10'),
 ('1003','BC01', '10'),
 ('1004','BB01', '110'),
-('1005','Tv01', '10')
+('1005','TV01', '10')
 ";
   // use exec() because no results are returned: su dung ham exec vi khong tra ve ket qua nao
   $conn->exec($sql);
