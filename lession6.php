@@ -143,6 +143,4 @@ if(!$result){
 }else{
     echo "Lấy danh sách email của khách hàng";
 }
-// Baif 2:
-    
 ?>
