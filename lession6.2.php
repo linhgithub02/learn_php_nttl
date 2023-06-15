@@ -100,34 +100,34 @@ if(!$result5){
     echo "Tao table CTHD thành công!";
 }
 */
-// Insert du lieu:
-// $insert_khach_hang= "INSERT INTO KHACHHANG (MAKH,HOTEN,DCHI,SODT,NGAYSINH,NGDK,DOANHSO)
-//  VALUES ('KH01','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22', '13.060.000' ),
-//  ('KH02','Tran Ngoc Han','23/5 Nguyen Trai, Q5, TpHCM', '08823451','1974/10/22','2006/07/30' , '3.060.000' ),
-//  ('KH03','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22' , '260.000'),
-//  ('KH04','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22' , '13.060.000'),
-//  ('KH05','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22' , '13.060.000' )
-//  ";
-//  $result= mysqli_query($dbh, $insert_khach_hang);
-//  if(!$result){
-//     die ("Không thể thực thi: " .mysqli_error());
-// }else{
-//     echo "Them moi 5 khach hang thành công!";
-// }
+Insert du lieu:
+$insert_khach_hang= "INSERT INTO KHACHHANG (MAKH,HOTEN,DCHI,SODT,NGAYSINH,NGDK,DOANHSO)
+ VALUES ('KH01','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22', '13.060.000' ),
+ ('KH02','Tran Ngoc Han','23/5 Nguyen Trai, Q5, TpHCM', '08823451','1974/10/22','2006/07/30' , '3.060.000' ),
+ ('KH03','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22' , '260.000'),
+ ('KH04','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22' , '13.060.000'),
+ ('KH05','Nguyen Van A','731 Tran Hung Dao, Q5, TpHCM', '08823451','1960/10/22','2006/07/22' , '13.060.000' )
+ ";
+ $result= mysqli_query($dbh, $insert_khach_hang);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Them moi 5 khach hang thành công!";
+}
 
-// $insert_nhan_vien= "INSERT INTO NHANVIEN (MANV,HOTEN,SODT,NGVL)
-//  VALUES ('NV01','Nguyen Nhu Nhut', '08823451','2006/07/22'),
-//  ('NV02','Le Thi Phi Yen', '08823451','2006/07/22'),
-//  ('NV03','Nguyen Van B', '08823451','2006/07/22'),
-//  ('NV04','Ngo Thanh Tuan', '08823451','2006/07/22'),
-//  ('NV05','Nguyen Thi Truc Thanh', '08823451','2006/07/22')
-//  ";
-//  $result= mysqli_query($dbh, $insert_nhan_vien);
-//  if(!$result){
-//     die ("Không thể thực thi: " .mysqli_error());
-// }else{
-//     echo "Them moi 5 nhan vien thành công!";
-// }
+$insert_nhan_vien= "INSERT INTO NHANVIEN (MANV,HOTEN,SODT,NGVL)
+ VALUES ('NV01','Nguyen Nhu Nhut', '08823451','2006/07/22'),
+ ('NV02','Le Thi Phi Yen', '08823451','2006/07/22'),
+ ('NV03','Nguyen Van B', '08823451','2006/07/22'),
+ ('NV04','Ngo Thanh Tuan', '08823451','2006/07/22'),
+ ('NV05','Nguyen Thi Truc Thanh', '08823451','2006/07/22')
+ ";
+ $result= mysqli_query($dbh, $insert_nhan_vien);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Them moi 5 nhan vien thành công!";
+}
 
 $insert_hoa_don= "INSERT INTO HOADON ( SOHD, NGHD, MAKH, MANV, TRIGIA)
  VALUES ('1001','2006/07/22', 'KH01', 'NV01', '320.000'),
@@ -142,15 +142,102 @@ $insert_hoa_don= "INSERT INTO HOADON ( SOHD, NGHD, MAKH, MANV, TRIGIA)
 }else{
     echo "Them moi 5 hoa don thành công!";
 }
-
-// Thêm vào thuộc tính GHICHU có kiểu dữ liệu varchar(20) cho quan hệ SANPHAM.
-// Thêm vào thuộc tính LOAIKH có kiểu dữ liệu là tinyint cho quan hệ KHACHHANG.
-// Cập nhật tên “Nguyễn Văn B” cho dữ liệu Khách Hàng có mã là KH01
+$sql = "INSERT INTO SANPHAM ( MASP, TENSP, DVT, NUOCSX, GIA)
+VALUES ('BC01','But chi', 'cay', 'Singapore', '3.000'),
+('BC02','But chi', 'hop', 'Singapore', '35.000'),
+('BB01','But bi', 'cay', 'Viet Nam', '5.000'),
+('BB02','But bi', 'hop', 'Thai Lam ', '50.000'),
+('TV01','Tap 100 giay ', 'quyen', 'Trung Quoc', '50.000')
+";
+$result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Them moi 5 san pham thành công!";
+}
+$insert_cthd= "INSERT INTO CTHD ( SOHD, MASP, SL)
+VALUES ('1001','BB01', '10'),
+('1002','BB02', '10'),
+('1003','BC01', '10'),
+('1004','BB01', '110'),
+('1005','TV01', '10')
+ ";
+ $result= mysqli_query($dbh, $insert_cthd);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Them moi 5 chi tiet hoa don thành công!";
+}
+//--Thêm vào thuộc tính GHICHU có kiểu dữ liệu varchar(20) cho quan hệ SANPHAM.
+$sql = "ALTER TABLE SANPHAM ADD GHICHU varchar(20) null ";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Them thuoc tinh ghi chu vao table san pham thành công!";
+}
+//--Thêm vào thuộc tính LOAIKH có kiểu dữ liệu là tinyint cho quan hệ KHACHHANG.
+$sql = "ALTER TABLE KHACHHANG ADD LOAIKH tinyint null ";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Them thuoc tinh loai kh vao table khachang thành công!";
+}
+//--Cập nhật tên “Nguyễn Văn B” cho dữ liệu Khách Hàng có mã là KH01
+$sql = "UPDATE KHACHHANG SET HOTEN= 'Nguyen Van B' WHERE MAKH= 'KH01'";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Cap nhat ho ten KH01 thành công!";
+}
 // Cập nhật tên “Nguyễn Văn Hoan” cho dữ liệu Khách Hàng có mã là KH09 và năm đăng ký là 2007
+$sql = "UPDATE KHACHHANG SET HOTEN= 'Nguyen Van Hoan' WHERE MAKH= 'KH05' and year(NGDK) ='2006'";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Cap nhat ho ten KH05 thành công!";
+}
 // Sửa kiểu dữ liệu của thuộc tính GHICHU trong quan hệ SANPHAM thành varchar(100).
+$sql = "ALTER TABLE SANPHAM MODIFY GHICHU varchar(100) ";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Thay kieu du lieu cua thuoc tinh ghi chu thành công!";
+}
 // Xóa thuộc tính GHICHU trong quan hệ SANPHAM.
+$sql = "ALTER TABLE SANPHAM DROP COLUMN GHICHU  ";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Xoa thuoc tinh ghi chu thành công!";
+}
 // Xoá tất cả dữ liệu khách hàng có năm sinh 1971
+$sql ="DELETE  FROM KHACHHANG  WHERE  year(NGAYSINH) ='1974' ";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Xoá tất cả dữ liệu khách hàng có năm sinh 1971 thành công!";
+}
 // Xoá tất cả dữ liệu khách hàng có năm sinh 1971 và năm đăng ký 2006
+$sql = "DELETE  FROM KHACHHANG  WHERE  year(NGAYSINH) ='1971' and year(NGDK)= '2006' ";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Xoá tất cả dữ liệu khách hàng có năm sinh 1971 và năm đăng ký 2006 thành công!";
+}
 // Xoá tất hoá đơn có mã KH = KH01
-
+$sql = "DELETE  FROM HOADON  WHERE  MAKH= 'KH01' ";
+ $result= mysqli_query($dbh, $sql);
+ if(!$result){
+    die ("Không thể thực thi: " .mysqli_error());
+}else{
+    echo "Xoá tất hoá đơn có mã KH = KH01 thành công!";
+}
 ?>
