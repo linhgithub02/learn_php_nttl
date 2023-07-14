@@ -1,6 +1,7 @@
-<!--phạm vi truy cập bao gồm: public, protected (có thể trong lớp, lớp con kế thừa),
-private(chỉ dùng trong lớp, lớp con kế thừa không thể dùng)
 <?php
+/*phạm vi truy cập bao gồm: public, protected (có thể trong lớp, lớp con kế thừa),
+private(chỉ dùng trong lớp, lớp con kế thừa không thể dùng)
+*/
 abstract class Shape {
     abstract public function calculateArea();
 }

@@ -5,13 +5,23 @@
  */
 interface Drawable
 {
-    public function draw();
+    public function draw($length, $color);
 }
 class Circle implements Drawable
 {
-
+    protected $radius;
+    protected $color;
+   
+    public function draw($length, $color)
+    {
+        
+    }
 }
 class Square implements Drawable
 {
-
+    protected $width;
+    protected $height;
+    public function draw($length, $color);
 }
+
+$circle = new Circle ();

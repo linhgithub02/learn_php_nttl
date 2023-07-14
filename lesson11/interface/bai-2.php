@@ -1,19 +1,23 @@
 <?php
- /* Tạo một interface "Drawable" (Có thể vẽ) với phương thức "draw".
- Tạo một lớp "Circle" (Hình tròn) và một lớp "Square" (Hình vuông) kế thừa từ interface Drawable
- và triển khai phương thức draw cho mỗi hình.
+ /* Tạo một interface "Logger" với các phương thức "logInfo", "logWarning" và "logError".
+  Tạo một lớp "FileLogger" (Ghi log vào file) và một lớp "DatabaseLogger" (Ghi log vào cơ sở dữ liệu)
+  và triển khai interface Logger cho cả hai lớp.
  */
 interface Logger
 {
-    public function logInfo();
-    public function logWarning();
-    public function logError();
+    public function logInfo($notification);
+    public function logWarning($notification);
+    public function logError($notification);
 }
 class FileLogger implements Drawable
 {
-
+    public function logInfo($notification);
+    public function logWarning($notification);
+    public function logError($notification);
 }
 class DatabaseLogger implements Drawable
 {
-
+    public function logInfo($notification);
+    public function logWarning($notification);
+    public function logError($notification);
 }
