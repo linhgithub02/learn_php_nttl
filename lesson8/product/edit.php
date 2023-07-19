@@ -1,7 +1,7 @@
 <?php
  require_once '../pdo.php';
  require_once '../helper.php';
- $product = getID_product(['id' => $_GET['id']]);
+ $pro = new QueryOfProduct();
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,6 +18,12 @@
 <body>
 <div class="container pt-4">
     <h1>Edit product</h1>
+        <?php 
+            $data = [
+                'id' => $_GET['id']
+            ];
+            $product = $pro->getID_product($data);
+        ?>
     <a href="../index.php" class="btn btn-primary">Back</a>
     <form method="POST" action="./name.php?id=<?= $product['id'] ?>">
         <div class="mb-3">

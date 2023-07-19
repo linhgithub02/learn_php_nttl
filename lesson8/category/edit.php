@@ -1,7 +1,9 @@
 <?php
  require_once '../pdo.php';
  require_once '../helper.php';
- $category = getID(['id' => $_GET['id']]);
+ $cate =  new QueryOfCategory();
+
+ //$category = getID(['id' => $_GET['id']]);
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,6 +20,12 @@
 <body>
 <div class="container pt-4">
     <h1>Edit category</h1>
+        <?php 
+            $data = [
+                'id' => $_GET['id']
+            ];
+            $category = $cate->getID($data);
+        ?>
     <a href="../index.php" class="btn btn-primary">Back</a>
     <form method="POST" action="./name.php?id=<?= $category['id'] ?>">
         <div class="mb-3">

@@ -1,8 +1,14 @@
 <?php
     require_once 'pdo.php';
 
-    $categories = getAll();
-    $products = getAll1();
+    $cate = new QueryOfCategory();
+    $categories = $cate->getAll();
+
+    $pro = new QueryOfProduct();
+    $products = $pro->getAll1();
+
+    //$categories = getAll();
+    //$products = getAll1();
 ?>
 
 <!doctype html>
